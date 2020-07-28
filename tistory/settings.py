@@ -4,7 +4,7 @@ import json
 from django.core.exceptions import ImproperlyConfigured
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+ROOT_DIR = os.path.join(BASE)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -127,8 +127,9 @@ STATIC_URL = '/static/'
 # ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-
-# Use Custom User
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+# 업로드된 파일을 저장할 디렉토리 경로
+MEDIA_URL = '/media/'
 
 AUTH_USER_MODEL = 'users.User'
 

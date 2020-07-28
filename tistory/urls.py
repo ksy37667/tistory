@@ -22,7 +22,6 @@ from blogs.views import posts_list
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('users.urls')),
-    path('', posts_list),
     path('blogs/', include('blogs.urls')),
     path('accounts/', include('django.contrib.auth.urls'))
 ]
