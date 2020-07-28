@@ -122,14 +122,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static'),
-# ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS= [
+    os.path.join(BASE_DIR, 'static'),
+]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # 업로드된 파일을 저장할 디렉토리 경로
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 AUTH_USER_MODEL = 'users.User'
 
@@ -137,3 +136,9 @@ AUTH_USER_MODEL = 'users.User'
 # 아래 로그인, 로그아웃 변수는 꼭 세팅해야함
 LOGIN_REDIRECT_URL = '/blogs/post'
 LOGOUT_REDIRECT_URL = '/blogs/post'
+
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
