@@ -61,5 +61,6 @@ class Post(BaseModel):
         return '%s - %s' % (self.id, self.title)
 ```
 
+- FBV(Function based view)
 # reference
   - [Deploying Django Application To AWS EC2 instance](https://dev.to/subhamuralikrishna/deploying-django-application-to-aws-ec2-instance-2a81)
