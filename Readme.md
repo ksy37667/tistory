@@ -14,7 +14,7 @@ http://13.209.64.249/blogs/post/
 - 장고 내장모듈 Login, Logout
   - https://docs.djangoproject.com/en/1.10/topics/auth/default/#module-django.contrib.auth.views
 
-- Django-social-share
+- django-social-share
 ```
 $ pip install django-social-share
 ```
@@ -36,6 +36,29 @@ $ pip install django-social-share
 # ...........
 # ...........
 {% endblock %}
+```
+- django-taggit
+
+```
+pip install django-taggit
+```
+```python
+models.py
+from django.db import models
+from taggit.managers import TaggableManager
+
+class Post(BaseModel):
+    title = models.CharField(max_length=255, blank=False)
+    content = models.TextField()
+    tags = TaggableManager(
+      verbose_name=_('tags'),
+      help_text=_('A comma-separated list of tags.'),
+      blank=True,
+      through=TaggedPost,
+    )
+
+    def __str__(self):
+        return '%s - %s' % (self.id, self.title)
 ```
 
 # reference
